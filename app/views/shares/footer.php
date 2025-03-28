@@ -71,61 +71,134 @@
 <!-- Custom CSS -->
 <style>
     .footer {
-        background: linear-gradient(180deg, #212529, #1a1f23);
-    }
+    background: linear-gradient(180deg, #1e2529, #171b1f);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
 
-    .underline-effect {
-        position: absolute;
-        bottom: -5px;
-        left: 0;
-        width: 50px;
-        height: 2px;
-        background: #0d6efd;
-        transition: width 0.3s ease;
-    }
+.footer h5 {
+    font-size: 1.25rem;
+    letter-spacing: 0.5px;
+    color: #ffffff;
+}
 
-    h5:hover .underline-effect {
-        width: 100px;
-    }
+.underline-effect {
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 40px;
+    height: 3px;
+    background: linear-gradient(90deg, #007bff, #00c4ff);
+    transition: width 0.4s ease-in-out, transform 0.3s ease;
+}
 
-    .hover-link {
-        transition: all 0.3s ease;
-    }
+h5:hover .underline-effect {
+    width: 80px;
+    transform: translateX(5px);
+}
 
-    .hover-link:hover {
-        color: #0d6efd !important;
-        padding-left: 10px;
-    }
+.text-muted {
+    color: rgba(255, 255, 255, 0.75) !important;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
 
-    .social-link {
-        display: flex;
-        align-items: center;
+.hover-link {
+    position: relative;
+    display: inline-block;
+    color: #e0e0e0;
+    font-size: 0.95rem;
+    transition: all 0.3s ease-in-out;
+}
+
+.hover-link:hover {
+    color: #00aaff !important;
+    transform: translateX(8px);
+}
+
+.hover-link::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: -2px;
+    left: 0;
+    background: #00aaff;
+    transition: width 0.3s ease-in-out;
+}
+
+.hover-link:hover::before {
+    width: 100%;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.08);
+    color: #ffffff;
+    font-size: 1.1rem;
+    text-decoration: none;
+    transition: all 0.4s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.social-link:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+.facebook:hover { 
+    background: #4267b2; 
+    border-color: #4267b2; 
+}
+
+.twitter:hover { 
+    background: #1da1f2; 
+    border-color: #1da1f2; 
+}
+
+.instagram:hover { 
+    background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af); 
+    border-color: #dd2a7b; 
+}
+
+.bg-gradient-dark {
+    background: linear-gradient(180deg, #171b1f, #121517);
+    border-top: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.copyright {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
+    letter-spacing: 0.3px;
+}
+
+.copyright .text-danger {
+    transition: transform 0.3s ease;
+}
+
+.copyright:hover .text-danger {
+    transform: scale(1.2);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .footer .col-lg-4 {
+        margin-bottom: 2rem;
+    }
+    
+    .social-icons {
         justify-content: center;
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        background: rgba(255, 255, 255, 0.1);
-        color: white;
-        text-decoration: none;
-        transition: all 0.3s ease;
     }
-
-    .social-link:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    
+    .underline-effect {
+        bottom: -6px;
     }
-
-    .facebook:hover { background: #3b5998; }
-    .twitter:hover { background: #1da1f2; }
-    .instagram:hover { background: #e1306c; }
-
-    .bg-gradient-dark {
-        background: linear-gradient(180deg, #1a1f23, #15191c);
-    }
-
-    .text-muted {
-        color: rgba(255, 255, 255, 0.7) !important;
-    }
+}
 </style>
 
 <!-- Font Awesome (update to latest version) -->

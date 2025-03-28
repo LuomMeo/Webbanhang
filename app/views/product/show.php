@@ -60,9 +60,9 @@
                                class="btn btn-success btn-lg px-5 py-3 transition-all hover-shadow flex-grow-1">
                                 <i class="fas fa-cart-plus me-2"></i>Thêm vào giỏ hàng
                             </a>
-                            <a href="/Product/list" 
+                            <a href="/Product" 
                                class="btn btn-outline-secondary btn-lg px-5 py-3 transition-all hover-shadow">
-                                <i class="fas fa-arrow-left me-2"></i>Quay lại
+                                <i class="fas fa-arrow-left me-2"></i>Quay lại danh sách sản phẩm
                             </a>
                         </div>
                     </div>
@@ -73,7 +73,7 @@
                     <p class="mb-4 fs-5">Vui lòng kiểm tra lại hoặc quay về danh sách sản phẩm.</p>
                     <a href="/Product/list" 
                        class="btn btn-outline-danger btn-lg px-5 py-2 transition-all hover-shadow">
-                        Quay lại
+                        Quay lại danh sách sản phẩm
                     </a>
                 </div>
             <?php endif; ?>

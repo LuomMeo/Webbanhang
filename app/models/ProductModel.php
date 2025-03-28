@@ -15,8 +15,7 @@ FROM " . $this->table_name . " p
 LEFT JOIN category c ON p.category_id = c.id";
 $stmt = $this->conn->prepare($query);
 $stmt->execute();
-$result = $stmt->fetchAll(PDO::FETCH_OBJ);
-return $result;
+return $stmt->fetchAll(PDO::FETCH_OBJ);
 }
 public function getProductById($id)
 {
@@ -100,5 +99,16 @@ if ($stmt->execute()) {
 return true;
 }
 return false;
+}
+public function getProductsByCategory($categoryId)
+{
+$query = "SELECT p.id, p.name, p.description, p.price, p.image, c.name as category_name 
+FROM " . $this->table_name . " p
+LEFT JOIN category c ON p.category_id = c.id
+WHERE p.category_id = :category_id";
+$stmt = $this->conn->prepare($query);
+$stmt->bindParam(':category_id', $categoryId);
+$stmt->execute();
+return $stmt->fetchAll(PDO::FETCH_OBJ);
 }
 }
